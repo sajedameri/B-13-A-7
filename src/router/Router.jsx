@@ -27,10 +27,11 @@ import Errorpage from '../pages/errorpage/Errorpage';
           element:<Stats/>
         },
 
-        {
-          path:"/errorpage",
-          element:<Errorpage/>,
-        }
+      
       ]
+        
+         
+          errorelement:<Errorpage/>,
+        
        },
       ]);
