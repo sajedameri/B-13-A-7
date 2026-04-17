@@ -22,7 +22,7 @@ const Errorpage = () => {
 
       {/* Button */}
       <button
-        onClick={() => window.location.href = "/Home"}
+        onClick={() => window.location.href = "/Errorpage"}
         className="mt-6 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
       >
         Go Back Home
