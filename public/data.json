@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Ayesha Rahman",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    "email": "ayesha.rahman@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["school friend", "close friend"],
+    "bio": "School best friend. We still talk about old classroom memories.",
+    "goal": 7,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 2,
+    "name": "Mehedi Hasan",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "email": "mehedi.hasan@example.com",
+    "days_since_contact": 18,
+    "status": "almost due",
+    "tags": ["college", "study partner"],
+    "bio": "College study partner. We used to prepare exams together.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 3,
+    "name": "Nusrat Jahan",
+    "picture": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
+    "email": "nusrat.jahan@example.com",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": ["university", "best friend"],
+    "bio": "University friend who always supported me during tough times.",
+    "goal": 14,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 4,
+    "name": "Sakib Al Hasan",
+    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    "email": "sakib.hasan@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["gym buddy", "friend"],
+    "bio": "Gym partner. We motivate each other to stay fit.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 5,
+    "name": "Rafiq Ahmed",
+    "picture": "https://images.unsplash.com/photo-1521119989659-a83eee488004",
+    "email": "rafiq.ahmed@example.com",
+    "days_since_contact": 22,
+    "status": "almost due",
+    "tags": ["work friend", "colleague"],
+    "bio": "Work colleague who helps me with project deadlines.",
+    "goal": 14,
+    "next_due_date": "2026-04-27"
+  },
+  {
+    "id": 6,
+    "name": "Tania Sultana",
+    "picture": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+    "email": "tania.sultana@example.com",
+    "days_since_contact": 40,
+    "status": "overdue",
+    "tags": ["cousin", "family friend"],
+    "bio": "Cousin sister. We grew up spending holidays together.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 7,
+    "name": "Imran Hossain",
+    "picture": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
+    "email": "imran.hossain@example.com",
+    "days_since_contact": 9,
+    "status": "on-track",
+    "tags": ["gaming buddy", "school friend"],
+    "bio": "Gaming buddy from school days. Still play online together.",
+    "goal": 7,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 8,
+    "name": "Farzana Islam",
+    "picture": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe",
+    "email": "farzana.islam@example.com",
+    "days_since_contact": 15,
+    "status": "almost due",
+    "tags": ["university", "creative friend"],
+    "bio": "University friend who loves design and creative work.",
+    "goal": 14,
+    "next_due_date": "2026-04-24"
+  },
+  {
+    "id": 9,
+    "name": "Arif Hossain",
+    "picture": "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
+    "email": "arif.hossain@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["neighbor", "childhood friend"],
+    "bio": "Childhood neighbor. We grew up playing cricket together.",
+    "goal": 7,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 10,
+    "name": "Mim Akter",
+    "picture": "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5",
+    "email": "mim.akter@example.com",
+    "days_since_contact": 28,
+    "status": "overdue",
+    "tags": ["college", "friend"],
+    "bio": "College friend who always shares helpful notes before exams.",
+    "goal": 14,
+    "next_due_date": "2026-04-12"
+  }
+]
