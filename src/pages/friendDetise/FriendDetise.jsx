@@ -1,9 +1,10 @@
-import React, { use } from "react";
+import React, { use, useContext } from "react";
 import { useParams } from "react-router";
 import callimg from "../../assets/call.png";
 import textimg from "../../assets/text.png";
 import videoimg from "../../assets/video.png";
 import { MdDelete } from "react-icons/md";
+import { TimelineContext } from "../../context/Context";
 const friendsPromise = fetch("/data.json").then((res) => res.json());
 
 const FriendDetise = () => {
@@ -13,6 +14,17 @@ const FriendDetise = () => {
   console.log(friends, "friends");
   const expectedFriend = friends.find((friend) => friend.id == id);
   console.log(expectedFriend, "expectedFriend");
+  const { timelineData, setTimelineData } = useContext(TimelineContext);
+
+  const handleAddData = (type, friendDatails) => {
+    const newData = {
+      ...friendDatails,
+      action: type,
+      time: new Date().toISOString(),
+    };
+    setTimelineData([...timelineData, newData]);
+  };
+
   return (
     <div className="p-5 md:p-10 lg:p-20 flex flex-col lg:flex-row gap-10">
       <div className="w-[40%] bg-base-300 p-10 shadow-xl ">
@@ -66,7 +78,7 @@ const FriendDetise = () => {
               className="btn btn-w-full bg-base-200 text-center py-10 px-50 text-red-600 font-semibold
          mt-5 "
             >
-            <MdDelete />  Delete
+              <MdDelete /> Delete
             </button>
           </h2>
         </div>
@@ -104,7 +116,10 @@ const FriendDetise = () => {
         <div className="bg-base-100 w-full ml-10 shadow-xl py-7">
           <h2 className="text-2xl">Quick Check-In</h2>
           <div className="flex justify-between gap-3 my-10">
-            <button className="btn py-20 px-20">
+            <button
+              onClick={() => handleAddData("Call",expectedFriend)}
+              className="btn py-20 px-20"
+            >
               {" "}
               <img src={callimg} alt="" />
               <br />
