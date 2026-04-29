@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../assets/logo.png";
 import btlogo from "../../../assets/Vector.png";
 import timelogo from "../../../assets/time.png";
 import statlogo from "../../../assets/ChartLine.png";
 import { Link, NavLink } from "react-router";
+import { TimelineContext } from "../../../context/Context";
 
 const Navbar = () => {
+   const { timelineData } = useContext(TimelineContext);
   const links = (
     <>
       <li>
@@ -25,7 +27,7 @@ const Navbar = () => {
             `font-semibold mr-2 ${isActive ? "bg-[#244D3F] text-white " : ""}`
           }>
           <img src={timelogo} alt="" className="w-5 h-5" />
-          Timeline
+          Timeline({timelineData.length})
         </NavLink>
       </li>
 

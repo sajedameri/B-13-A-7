@@ -5,24 +5,30 @@ import textimg from "../../assets/text.png";
 import videoimg from "../../assets/video.png";
 import { MdDelete } from "react-icons/md";
 import { TimelineContext } from "../../context/Context";
+import { toast } from "react-toastify";
 const friendsPromise = fetch("/data.json").then((res) => res.json());
 
 const FriendDetise = () => {
   const { id } = useParams();
-  console.log(id, "id");
+  // console.log(id, "id");
   const friends = use(friendsPromise);
-  console.log(friends, "friends");
+  // console.log(friends, "friends");
   const expectedFriend = friends.find((friend) => friend.id == id);
-  console.log(expectedFriend, "expectedFriend");
-  const { timelineData, setTimelineData } = useContext(TimelineContext);
+  // console.log(expectedFriend, "expectedFriend");
+  const { setTimelineData } = useContext(TimelineContext);
 
-  const handleAddData = (type, friendDatails) => {
+  const handleAddData = (type, friendDetails) => {
     const newData = {
-      ...friendDatails,
-      action: type,
-      time: new Date().toISOString(),
+      id: Date.now(),
+      type: type,
+      name: friendDetails.name,
+      date: new Date().toISOString().split("T")[0],
     };
-    setTimelineData([...timelineData, newData]);
+
+    setTimelineData((prev) => [...prev, newData]);
+    console.log(newData);
+
+    toast.success(`${type} done`);
   };
 
   return (
@@ -59,14 +65,14 @@ const FriendDetise = () => {
         <h2> Email:{expectedFriend.email}</h2>
         <div className="mt-5">
           <h2>
-            <button className="btn  bg-base-200 text-center py-10 px-50 font-semibold mt-5">
+            <button className="btn  bg-base-200 text-center text-nowrap  py-10 px-50 font-semibold mt-5">
               Snooze 2 weeks
             </button>
           </h2>
 
           <h2>
             <button
-              className=" btn btn-w-full bg-base-200 text-center py-10 px-50
+              className=" btn btn-w-full bg-base-200 text-center text-xl py-10 px-50
          font-semibold mt-5"
             >
               Archive
@@ -87,7 +93,7 @@ const FriendDetise = () => {
       <div className="w-[60%]">
         <div className="grid grid-cols-3 justify-center items-center gap-7 pl-10 mb-20 ">
           <div className="bg-base-300 shadow-xl p-10">
-            <h2 className="text-3xl font-bold text-center">62</h2>
+            <h2 className="text-xl font-bold text-center">62</h2>
             <h2 className="font-semibold">days since cont actd</h2>
           </div>
           <div className="bg-base-300 shadow-xl p-10">
@@ -117,7 +123,7 @@ const FriendDetise = () => {
           <h2 className="text-2xl">Quick Check-In</h2>
           <div className="flex justify-between gap-3 my-10">
             <button
-              onClick={() => handleAddData("Call",expectedFriend)}
+              onClick={() => handleAddData("Voice Call", expectedFriend)}
               className="btn py-20 px-20"
             >
               {" "}
@@ -126,14 +132,19 @@ const FriendDetise = () => {
               Call
             </button>
 
-            <button className="btn py-20 px-20">
+            <button
+              onClick={() => handleAddData("Text message", expectedFriend)}
+              className="btn py-20 px-20"
+            >
               {" "}
               <img src={textimg} alt="" className="" />
               <h2>Text</h2>
             </button>
 
-            <button className="btn py-20 px-20">
-              {" "}
+            <button
+              onClick={() => handleAddData("video call", expectedFriend)}
+              className="btn py-20 px-20"
+            >
               <img src={videoimg} alt="" className="" />
               <h2>video</h2>
             </button>

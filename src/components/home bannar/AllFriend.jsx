@@ -1,18 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { BounceLoader } from "react-spinners";
 
 const AllFriend = () => {
   const [friends, setFriends] = useState([]);
+const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data) => setFriends(data));
-  }, []);
+useEffect(() => {
+  setLoading(true);
+
+  fetch("/data.json")
+    .then((res) => res.json())
+    .then((data) => {
+      setFriends(data);
+      setLoading(false);
+    });
+}, []);
+  console.log(loading,"loading")
 
   return (
     <div>
       <h2 className="text-3xl font-bold p-8">Your Friends</h2>
+      
+{loading ?(
+<div><BounceLoader color="#b45bbf" /></div>
+):(
+      
+      
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 m-10">
         {friends.map((friend) => (
@@ -59,8 +73,9 @@ const AllFriend = () => {
               </div>
             </div>
           </Link>
-        ))}
+       ))}
       </div>
+       )}
     </div>
   );
 };
